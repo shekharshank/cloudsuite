@@ -15,11 +15,13 @@
 			<fh:tools>NONE</fh:tools>
 			<fh:userCommands />
 		</fa:hostConfig>
-		<fa:scale>190</fa:scale>
+		<fa:scale>100</fa:scale>
 		<fa:runControl unit="time">
-			<fa:rampUp>30</fa:rampUp>
-			<fa:steadyState>50</fa:steadyState>
-			<fa:rampDown>30</fa:rampDown>
+			<fa:rampUp>150</fa:rampUp>
+                        <fa:variableLoad>true</fa:variableLoad>
+                        <fa:variableLoadFile>/web20_benchmark/deploy/loadfile</fa:variableLoadFile>
+                        <fa:steadyState>1050</fa:steadyState>
+                        <fa:rampDown>30</fa:rampDown>
 		</fa:runControl>
 		<outputDir>/home/tpalit/Documents/elgg_output</outputDir>
 		<audit>false</audit>
@@ -39,23 +41,23 @@
             threads before the next agent gets to start the
             threads. The socket connection queue will be less
             loaded when it is set to false. -->
-            <parallel>false</parallel>
+            <parallel>true</parallel>
 
 		</threadStart>
 		<stats>
 			<maxruntime>6</maxruntime>
-			<interval>30</interval>
-		</stats>
-		<runtimestats enabled="false">
 			<interval>5</interval>
-		</runtimestats>
+		</stats>
+		<runtimeStats enabled="false">
+			<interval>5</interval>
+		</runtimeStats>
 		<!-- The driver-specific config. -->
 		<driverConfig name="ElggDriver">
-			<agents>1</agents>
+			<agents>10</agents>
 			<stats>
 				<interval>30</interval>
 			</stats>
-			<runtimestats target="9988" />
+			<runtimeStats target="url" />
 		</driverConfig>
 	</fa:runConfig>
 	<serverConfig>
