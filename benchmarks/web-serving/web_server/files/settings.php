@@ -106,7 +106,7 @@ $CONFIG->dbprefix = 'elgg_';
  * Note: Multiple server support is only available on server 1.2.1
  * or higher with PECL library > 2.0.0
  */
-$CONFIG->memcache = true;
+$CONFIG->memcache = false;
 //
 $CONFIG->memcache_servers = array (
 //	array('server1', 11211),
