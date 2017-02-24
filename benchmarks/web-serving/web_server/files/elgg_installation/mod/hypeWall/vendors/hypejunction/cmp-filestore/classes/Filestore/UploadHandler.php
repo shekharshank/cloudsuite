@@ -127,7 +127,7 @@ class UploadHandler {
 		$handled_uploads = array();
 		$entities = array();
 
-		foreach ($uploads as $key => $upload) {
+		foreach ((array)$uploads as $key => $upload) {
 			if ($upload->error) {
 				$handled_uploads[] = $upload;
 				continue;
